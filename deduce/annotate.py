@@ -187,11 +187,11 @@ def annotate_names(text, patient_first_names, patient_initial, patient_surname, 
         # For both first and last names, check if the token
         # is on the lookup list and not on the whitelist
         if (token in FIRST_NAMES or token.capitalize() in FIRST_NAMES) and token.lower() not in WHITELIST:
-            tokens_deid.append("<VOORNAAMONBEKEND {}>".format(token))
+            tokens_deid.append("<VOORNAAMONBEKEND {}>".format(token.capitalize()))
             continue
 
         if (token in SURNAMES or token.capitalize() in SURNAMES) and token.lower() not in WHITELIST:
-            tokens_deid.append("<ACHTERNAAMONBEKEND {}>".format(token))
+            tokens_deid.append("<ACHTERNAAMONBEKEND {}>".format(token.capitalize()))
             continue
 
         ### Wrap up
